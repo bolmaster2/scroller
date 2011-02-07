@@ -1,0 +1,67 @@
+/* Scroller example css */
+
+/* The inner and outer containers is created by you so the id's is decided by you. */
+
+/* This is the outer container. Everything is required to make it function */
+#outer-container {
+	overflow: hidden;
+	width: 700px;
+	height: 700px;
+	position: relative;
+}
+/* The inner container (this is the container that is moving inside the outer-container) */
+#inner-container {
+	width: 3013px; /* You can of course also set this dynamically later on with javascript */
+	height: 700px;
+	position: relative;
+}
+
+/* From here follows the elements (the scrollbar) that is created by the Javascript */
+/* You can obviously remove the box-shadows, border-radius, opacity and the background colors */
+
+/* This is the scrollbar container - style it as you like */
+#scroller {
+	width: 100%; 
+	height: 7px; 
+	position: absolute; 
+	bottom: 0; left: 0; 
+	z-index: 10;
+	background: #777;
+	
+	-moz-box-shadow: inset 0 0 3px #999999;
+	-webkit-box-shadow: inset 0 0 3px #999999;
+	box-shadow: inset 0 0 3px #999999;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* This is the draggable slider - style it as you like */
+#slider {
+	width: auto; height: 100%; 
+	background: #333;
+	position: absolute;
+	
+	opacity: .75;
+	filter: alpha(opacity=75);
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+
+/* If it's a vertical scroller we need to do some changes */
+#scroller.vertical {
+	height: 100%;
+	width: 7px;
+	top: 0;
+	right: 0px;
+	left: auto;
+	bottom: auto;
+}
+#scroller.vertical #slider {
+	height: auto;
+	width: 100%;
+}
